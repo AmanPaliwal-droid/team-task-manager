@@ -14,3 +14,4 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+console.log('URI starts with:', process.env.MONGODB_URI?.substring(0, 20));
