@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { ProjectProvider } from './contexts/ProjectContext';
-import { useAuth } from './contexts/AuthContext';
 import PrivateRoute from './components/shared/PrivateRoute';
 import AppLayout from './components/shared/AppLayout';
 import LoginPage from './pages/LoginPage';
