@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ override: false }); // never overwrite Railway/system env vars
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
@@ -14,7 +14,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true,
+}));
 app.use(express.json());
 
 // Routes
